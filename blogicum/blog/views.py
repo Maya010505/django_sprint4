@@ -73,7 +73,7 @@ def post_edit(request, post_id=None):
         instance = get_object_or_404(Post, pk=post_id)
 
         if instance.author != request.user:
-            return redirect("blog:post_detail", post_id)
+            return redirect("blog:detail_post", post_id)
     else:
         instance = None
 
@@ -91,7 +91,7 @@ def post_edit(request, post_id=None):
         post.save()
 
         if post_id:
-            return redirect("blog:post_detail", post_id)
+            return redirect("blog:detail_post", post_id)
         else:
             return redirect("blog:profile", request.user.username)
 
@@ -202,7 +202,7 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("blog:post_detail",
+        return reverse("blog:detail_post",
                        kwargs={"post_id": self.kwargs["post_id"]})
 
 
@@ -217,7 +217,7 @@ def comment_edit(request, post_id, comment_id):
         form = CommentsForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
-            return redirect("blog:post_detail", post_id=post_id)
+            return redirect("blog:detail_post", post_id=post_id)
     else:
         form = CommentsForm(instance=comment)
 
@@ -238,7 +238,7 @@ def comment_delete(request, post_id, comment_id):
 
     if request.method == "POST":
         comment.delete()
-        return redirect("blog:post_detail", post_id=post_id)
+        return redirect("blog:detail_post", post_id=post_id)
 
     return render(request, "blog/comment.html", context)
 
@@ -259,4 +259,4 @@ def add_comment(request, post_id):
 
         comment.save()
 
-    return redirect("blog:post_detail", post_id=post_id)
+    return redirect("blog:detail_post", post_id=post_id)
