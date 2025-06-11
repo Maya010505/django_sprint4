@@ -6,7 +6,7 @@ from .utils import get_published_posts
 from django.http import Http404
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
-from blog.forms import ProfileEditForm, PostForm, CommentsForm
+from .forms import ProfileEditForm, PostForm, CommentsForm
 from django.core.paginator import Paginator
 from django.views.generic import CreateView
 from django.db.models import Count
