@@ -198,7 +198,7 @@ class _TestModelAttrs:
 @pytest.fixture
 def PostModel() -> Type[Model]:
     try:
-        from blog.models import Post
+        from blogicum.blog.models import Post
     except Exception as e:
         raise AssertionError(
             "При импорте модели `Post` из файла `models.py` возникла ошибка."
@@ -212,7 +212,7 @@ def PostModel() -> Type[Model]:
 @pytest.fixture
 def CommentModel() -> Model:
     try:
-        from blog import models
+        from blogicum.blog import models
     except Exception as e:
         raise AssertionError(
             "Убедитесь, что в файле `blog/models.py` нет ошибок. "
@@ -353,7 +353,7 @@ def cleanup(request):
 
     yield
 
-    from blogicum import settings
+    from blogicum.blogicum import settings
 
     image_dir = Path(settings.__file__).parent.parent / settings.MEDIA_ROOT
 

@@ -3,8 +3,8 @@ from typing import Union, Type, Any
 
 from django.db.models import Model, Field
 
-from adapters.model_adapter import ModelAdapter
-from conftest import get_field_key
+from model_adapter import ModelAdapter
+from tests.conftest import get_field_key
 
 
 class StudentModelAdapter(ModelAdapter):

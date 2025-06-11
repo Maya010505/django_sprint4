@@ -1,6 +1,6 @@
 from inspect import isclass
 
-from adapters.model_adapter import ModelAdapter
+from model_adapter import ModelAdapter
 
 
 class UserModelAdapter(ModelAdapter):
