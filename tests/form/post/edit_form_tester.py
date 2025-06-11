@@ -5,15 +5,15 @@ from django.db.models import QuerySet, Model
 from django.forms import BaseForm
 from django.http import HttpResponse
 
-from conftest import TitledUrlRepr, UrlRepr
-from fixtures.types import ModelAdapterT
-from form.base_form_tester import (
+from tests.conftest import TitledUrlRepr, UrlRepr
+from tests.fixtures.types import ModelAdapterT
+from tests.form.base_form_tester import (
     FormTagMissingException,
     FormMethodException,
     TextareaMismatchException,
     TextareaTagMissingException,
 )
-from form.base_form_tester import (
+from tests.form.base_form_tester import (
     SubmitTester,
     FormValidationException,
     UnauthorizedEditException,
@@ -22,11 +22,11 @@ from form.base_form_tester import (
     DatabaseCreationException,
     ItemCreatedException,
 )
-from form.base_form_tester import (
+from tests.form.base_form_tester import (
     UnauthorizedSubmitTester,
     AnonymousSubmitTester,
 )
-from form.post.form_tester import PostFormTester
+from tests.form.post.form_tester import PostFormTester
 
 
 class EditPostFormTester(PostFormTester):

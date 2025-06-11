@@ -1,7 +1,7 @@
 from typing import Union
 
-from conftest import TitledUrlRepr
-from form.delete_tester import DeleteTester
+from tests.conftest import TitledUrlRepr
+from tests.form.delete_tester import DeleteTester
 
 
 class DeleteCommentTester(DeleteTester):

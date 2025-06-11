@@ -6,8 +6,8 @@ from typing import Type, Optional, Union
 from django.db.models import Model
 from django.test import Client
 
-from conftest import TitledUrlRepr
-from fixtures.types import ModelAdapterT
+from tests.conftest import TitledUrlRepr
+from tests.fixtures.types import ModelAdapterT
 
 
 class BaseTester(ABC):

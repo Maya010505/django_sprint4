@@ -5,8 +5,8 @@ from PIL import Image
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.forms import BaseForm
 
-from adapters.post import PostModelAdapter
-from form.base_form_tester import BaseFormTester
+from tests.adapters.post import PostModelAdapter
+from tests.form.base_form_tester import BaseFormTester
 
 
 class PostFormTester(BaseFormTester):
